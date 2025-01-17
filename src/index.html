@@ -11,14 +11,115 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>For Ionic Framework Tutorials</h2>
-    <p id="text">Welcome to Ionic Framework Tutorials. Here you will find all the tutorials related to Ionic Framework. You can learn how to create mobile apps using Ionic Framework. Ionic Framework is a powerful framework that allows you to build cross-platform mobile apps with HTML, CSS, and JavaScript. It is built on top of Web Components and provides a set of UI components and tools to help you build high-quality mobile apps.</p>
-    <ion-button id="btn">Click Me</ion-button>
+    <ion-app>
+        <ion-header class="myHeader">
+            <ion-toolbar color="primary">
+                <ion-title>
+                  <div class="mainHeader">
+                      <div class="brand">
+                         <img src="" alt="Photo">
+                         <h3>Edi_Mars&apos;</h3>
+                       </div>
+                       <div class="searc">
+                        <ion-searchbar></ion-searchbar>
+                       </div>
+                      <div class="nav-links">
+                        <ul>
+                           <li><a href="#">Home</a></li> 
+                           <li><a href="#">About</a></li> 
+                           <li><a href="#">Blog</a></li> 
+                           <li><a href="#">Contact</a></li> 
+                           <li><a href="#">Projects</a></li> 
+                        </ul>
+                      </div>
+                  </div>
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content color="gray">
+            <h2>For Ionic Framework Tutorials</h2>
+            <p id="text">Welcome to Ionic Framework Tutorials. Here you will find all the tutorials related to Ionic Framework. You can learn how to create mobile apps using Ionic Framework. Ionic Framework is a powerful framework that allows you to build cross-platform mobile apps with HTML, CSS, and JavaScript. It is built on top of Web Components and provides a set of UI components and tools to help you build high-quality mobile apps.</p>
+            
+            <ion-button id="btn">Click Me</ion-button>
 
-    <ion-item>
-        <ion-label>Full Nmae:</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
+            <!---FOR ICON-->
+            <ion-chip>
+                <ion-avatar>
+                  <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                </ion-avatar>
+                <ion-label>Chip Avatar</ion-label>
+            </ion-chip>
+            
+            <ion-searchbar search-icon="search-circle" placeholder="Custom Search Icon"></ion-searchbar>
+
+            <ion-item>
+                <ion-label position="floating">Full name:</ion-labelp>
+                <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Email:</ion-labelp>
+                <ion-input type="email"></ion-input>
+            </ion-item>
+        </ion-content>
+        <ion-footer color="">
+            All rights
+        </ion-footer>
+
+        <!--DARK MODE-->
+    
+        <ion-header class="ion-no-border">
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-back-button default-href="#"></ion-back-button>
+              </ion-buttons>
+              <ion-title>Display</ion-title>
+              <ion-buttons slot="end">
+                <ion-button color="dark">
+                  <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          
+          <ion-content>
+            <ion-list-header>Appearance</ion-list-header>
+            <ion-list [inset]="true">
+              <ion-item>
+                <ion-toggle [(ngModel)]="paletteToggle" (ionChange)="toggleChange($event)" justify="space-between"
+                  >Dark Mode</ion-toggle
+                >
+              </ion-item>
+            </ion-list>
+          
+            <ion-list [inset]="true">
+              <ion-item [button]="true">Text Size</ion-item>
+              <ion-item>
+                <ion-toggle justify="space-between">Bold Text</ion-toggle>
+              </ion-item>
+            </ion-list>
+          
+            <ion-list-header>Brightness</ion-list-header>
+            <ion-list [inset]="true">
+              <ion-item>
+                <ion-range value="40">
+                  <ion-icon name="sunny-outline" slot="start"></ion-icon>
+                  <ion-icon name="sunny" slot="end"></ion-icon>
+                </ion-range>
+              </ion-item>
+              <ion-item>
+                <ion-toggle justify="space-between" checked>True Tone</ion-toggle>
+              </ion-item>
+            </ion-list>
+          
+            <ion-list [inset]="true">
+              <ion-item [button]="true">
+                <ion-label>Night Shift</ion-label>
+                <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+    </ion-app>
+
 
     <script src="script.js"></script>
 </body>
